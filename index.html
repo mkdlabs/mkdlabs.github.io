@@ -206,6 +206,28 @@
   }
   .about-card .mail:hover { text-decoration: underline; }
 
+  .team-label {
+    text-align: center; color: var(--text-soft); font-size: 0.88em;
+    text-transform: uppercase; letter-spacing: 1.5px; margin: 40px 0 18px;
+  }
+  .team-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .person {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: var(--radius); padding: 24px 26px;
+    display: flex; align-items: center; gap: 16px;
+    transition: transform 0.25s, border-color 0.25s;
+  }
+  .person:hover { transform: translateY(-3px); border-color: rgba(255, 255, 255, 0.18); }
+  .person .p-avatar {
+    width: 54px; height: 54px; border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Sora", sans-serif; font-weight: 700; font-size: 1.05em; color: #0B0E1A;
+  }
+  .person.p1 .p-avatar { background: linear-gradient(135deg, #7CD4FF, #4A9DE8); }
+  .person.p2 .p-avatar { background: linear-gradient(135deg, #7CFFB5, #34B978); }
+  .person .p-name { font-family: "Sora", sans-serif; font-weight: 600; font-size: 1.02em; }
+  .person .p-role { color: var(--text-soft); font-size: 0.88em; margin-top: 2px; }
+
   footer {
     position: relative; z-index: 1; text-align: center;
     padding: 44px 24px 54px; color: var(--text-soft); font-size: 0.9em;
@@ -220,6 +242,7 @@
   @media (max-width: 820px) {
     .app-card { grid-template-columns: 1fr; padding: 28px; gap: 26px; }
     .about-card { flex-direction: column; text-align: center; padding: 32px 24px; }
+    .team-row { grid-template-columns: 1fr; }
     .nav-links { display: none; }
     .hero { padding-top: 130px; }
   }
@@ -345,6 +368,24 @@
       Little Brain started as a way to teach my own family's languages to the next
       generation, and Hindu Calendar keeps our traditions a tap away for the elders.</p>
       <a class="mail" href="mailto:mukesh.rietjp@gmail.com">✉️ mukesh.rietjp@gmail.com</a>
+    </div>
+  </div>
+
+  <p class="team-label">Consultants</p>
+  <div class="team-row">
+    <div class="person p1 reveal">
+      <div class="p-avatar">HM</div>
+      <div>
+        <div class="p-name">Harsh Mathur</div>
+        <div class="p-role">Senior Software Developer</div>
+      </div>
+    </div>
+    <div class="person p2 reveal">
+      <div class="p-avatar">AG</div>
+      <div>
+        <div class="p-name">Anshul Goyal</div>
+        <div class="p-role">QA Lead &amp; Analyst</div>
+      </div>
     </div>
   </div>
 </section>
