@@ -35,14 +35,15 @@
   }
   h1, h2, h3 { font-family: "Sora", "Inter", sans-serif; letter-spacing: -0.02em; }
 
-  /* ---- background glows ---- */
+  /* ---- background glows ----
+     radial-gradients instead of filter:blur — huge blurs are extremely slow on iOS Safari */
   .glow {
-    position: fixed; border-radius: 50%; filter: blur(120px);
-    opacity: 0.35; pointer-events: none; z-index: 0;
+    position: fixed; border-radius: 50%; pointer-events: none; z-index: 0;
+    transform: scale(1.7);
   }
-  .glow.g1 { width: 560px; height: 560px; background: var(--violet-deep); top: -180px; left: -120px; }
-  .glow.g2 { width: 480px; height: 480px; background: #B84DD9; top: 30%; right: -200px; opacity: 0.22; }
-  .glow.g3 { width: 520px; height: 520px; background: var(--saffron-deep); bottom: -220px; left: 20%; opacity: 0.18; }
+  .glow.g1 { width: 560px; height: 560px; background: radial-gradient(circle, rgba(84, 56, 201, 0.35) 0%, rgba(84, 56, 201, 0) 68%); top: -180px; left: -120px; }
+  .glow.g2 { width: 480px; height: 480px; background: radial-gradient(circle, rgba(184, 77, 217, 0.22) 0%, rgba(184, 77, 217, 0) 68%); top: 30%; right: -200px; }
+  .glow.g3 { width: 520px; height: 520px; background: radial-gradient(circle, rgba(192, 94, 5, 0.18) 0%, rgba(192, 94, 5, 0) 68%); bottom: -220px; left: 20%; }
 
   /* ---- nav ---- */
   nav {

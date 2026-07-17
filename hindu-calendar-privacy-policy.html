@@ -26,12 +26,13 @@
     background: var(--bg); color: var(--text); line-height: 1.7; overflow-x: hidden;
   }
   h1, h2 { font-family: "Sora", "Inter", sans-serif; letter-spacing: -0.02em; }
+  /* radial-gradients instead of filter:blur — huge blurs are extremely slow on iOS Safari */
   .glow {
-    position: fixed; border-radius: 50%; filter: blur(120px);
-    opacity: 0.28; pointer-events: none; z-index: 0;
+    position: fixed; border-radius: 50%; pointer-events: none; z-index: 0;
+    transform: scale(1.7);
   }
-  .glow.g1 { width: 520px; height: 520px; background: var(--saffron-deep); top: -200px; left: -140px; }
-  .glow.g2 { width: 440px; height: 440px; background: #6C4CE8; bottom: -220px; right: -180px; opacity: 0.18; }
+  .glow.g1 { width: 520px; height: 520px; background: radial-gradient(circle, rgba(232, 118, 12, 0.28) 0%, rgba(232, 118, 12, 0) 68%); top: -200px; left: -140px; }
+  .glow.g2 { width: 440px; height: 440px; background: radial-gradient(circle, rgba(108, 76, 232, 0.18) 0%, rgba(108, 76, 232, 0) 68%); bottom: -220px; right: -180px; }
 
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 50;
